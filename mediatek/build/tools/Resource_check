@@ -1,0 +1,41 @@
+#! /bin/sh
+source build/envsetup.sh
+
+mkdir ResultTxt
+mediatek/build/tools/FindDummyRes.py -d packages/apps/Phone/ >ResultTxt/Phone_CheckResult.txt
+mediatek/build/tools/lint --check UnusedResources,MissingTranslation packages/apps/Phone/ >>ResultTxt/Phone_CheckResult.txt
+
+mediatek/build/tools/FindDummyRes.py -d packages/apps/Browser/ >ResultTxt/Browser_CheckResult.txt
+mediatek/build/tools/lint --check UnusedResources,MissingTranslation packages/apps/Browser/ >>ResultTxt/Browser_CheckResult.txt
+
+mediatek/build/tools/FindDummyRes.py -d packages/apps/Calculator/ >ResultTxt/Calculator_CheckResult.txt
+mediatek/build/tools/lint --check UnusedResources,MissingTranslation packages/apps/Calculator/ >>ResultTxt/Calculator_CheckResult.txt
+
+mediatek/build/tools/FindDummyRes.py -d packages/apps/Calendar/ >ResultTxt/Calendar_CheckResult.txt
+mediatek/build/tools/lint --check UnusedResources,MissingTranslation packages/apps/Calendar/ >>ResultTxt/Calendar_CheckResult.txt
+
+mediatek/build/tools/FindDummyRes.py -d packages/apps/Contacts/ >ResultTxt/Contacts_CheckResult.txt
+mediatek/build/tools/lint --check UnusedResources,MissingTranslation packages/apps/Contacts/ >>ResultTxt/Contacts_CheckResult.txt
+
+mediatek/build/tools/FindDummyRes.py -d packages/apps/DeskClock/ >ResultTxt/DeskClock_CheckResult.txt
+mediatek/build/tools/lint --check UnusedResources,MissingTranslation packages/apps/DeskClock/ >>ResultTxt/DeskClock_CheckResult.txt
+
+mediatek/build/tools/FindDummyRes.py -d packages/apps/Email/ >ResultTxt/Email_CheckResult.txt
+mediatek/build/tools/lint --check UnusedResources,MissingTranslation packages/apps/Email/ >>ResultTxt/Email_CheckResult.txt
+
+mediatek/build/tools/FindDummyRes.py -d packages/apps/Gallery2/ >ResultTxt/Gallery2_CheckResult.txt
+mediatek/build/tools/lint --check UnusedResources,MissingTranslation packages/apps/Gallery2/ >>ResultTxt/Gallery2_CheckResult.txt
+
+mediatek/build/tools/FindDummyRes.py -d packages/apps/Launcher2/ >ResultTxt/Launcher2_CheckResult.txt
+mediatek/build/tools/lint --check UnusedResources,MissingTranslation packages/apps/Launcher2/ >>ResultTxt/Launcher2_CheckResult.txt
+
+mediatek/build/tools/FindDummyRes.py -d packages/apps/Music/ >ResultTxt/Music_CheckResult.txt
+mediatek/build/tools/lint --check UnusedResources,MissingTranslation packages/apps/Music/ >>ResultTxt/Music_CheckResult.txt
+
+mediatek/build/tools/FindDummyRes.py -d packages/apps/Settings/ >ResultTxt/Settings_CheckResult.txt
+mediatek/build/tools/lint --check UnusedResources,MissingTranslation packages/apps/Settings/ >>ResultTxt/Settings_CheckResult.txt
+
+mediatek/build/tools/FindDummyRes.py -d packages/apps/Mms/ >ResultTxt/Mms_CheckResult.txt
+mediatek/build/tools/lint --check UnusedResources,MissingTranslation packages/apps/Mms/ >>ResultTxt/Mms_CheckResult.txt
+
+sh mediatek/build/tools/parser.sh ResultTxt
